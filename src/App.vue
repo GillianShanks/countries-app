@@ -2,8 +2,10 @@
   <div class="">
     <h1>Country Navigator</h1>
     <div class="container">
-      <countries-list :countries="countries"></countries-list>
-
+      <div class="flex-col">
+        <countries-search :countries="countries"></countries-search>
+        <countries-list :countries="countries"></countries-list>
+      </div>
       <div class="flex-col">
         <countries-dropdown :countries="countries"></countries-dropdown>
         <country-detail  :country="selectedCountry"></country-detail>
@@ -18,6 +20,7 @@
 import CountriesList from './components/CountriesList.vue';
 import CountryDetail from './components/CountryDetail.vue';
 import CountriesDropdown from './components/CountriesDropdown.vue';
+import CountriesSearch from './components/CountriesSearch.vue';
 import {eventBus} from './main.js';
 
 export default {
@@ -40,7 +43,8 @@ export default {
   components: {
     "countries-list": CountriesList,
     "country-detail": CountryDetail,
-    "countries-dropdown": CountriesDropdown
+    "countries-dropdown": CountriesDropdown,
+    "countries-search": CountriesSearch
   }
 }
 </script>
