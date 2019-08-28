@@ -1,12 +1,13 @@
 <template lang="html">
   <div class="">
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click me, Kyle</a>
     <h1>Country Navigator</h1>
     <div class="container">
-      <countries-dropdown :countries="countries"></countries-dropdown>
-
       <countries-list :countries="countries"></countries-list>
-      <country-detail  :country="selectedCountry"></country-detail>
+
+      <div class="flex-col">
+        <countries-dropdown :countries="countries"></countries-dropdown>
+        <country-detail  :country="selectedCountry"></country-detail>
+      </div>
     </div>
 
   </div>
@@ -48,6 +49,9 @@ export default {
 .container {
   display: flex;
   justify-content: space-between;
+}
+.flex-col{
+  flex-direction: column;
 }
 
 </style>
